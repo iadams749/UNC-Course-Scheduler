@@ -138,7 +138,7 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-/venv/bin/
+/venv/bin/activate
 include/
 /venv/lib/
 /venv/pyvenv.cfg
