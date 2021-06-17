@@ -23,3 +23,5 @@ reqClasses = {'ASTR101','MATH347','RELI109'}
 nick = NumReq(reqClasses,2)
 
 print(nick.isSatisfied(classesTaken))
+
+print('poop')
