@@ -24,4 +24,4 @@ nick = NumReq(reqClasses,2)
 
 print(nick.isSatisfied(classesTaken))
 
-print('poop')
+print('poopy')
