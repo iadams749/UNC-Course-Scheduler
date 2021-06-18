@@ -19,10 +19,10 @@ def req_encoder(req):
 
 def reqList_encoder(reqs):
     if isinstance(reqs, ReqList):
-        dictList = []
+        dictList = ['CLASSLIST']
 
         for r in reqs.requirementList:
-            dictList.append(json.dumps(r,default=req_encoder))
+            dictList.append(json.loads(json.dumps(r,default=req_encoder)))
 
         return dictList
 

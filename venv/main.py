@@ -25,4 +25,6 @@ classesTaken.add(thomas)
 reqClasses = {'ASTR101','MATH347','RELI109'}
 nick = ReqList(['COMP210','COMP211',OrReq({'COMP283','MATH381'}),AndReq({'ASTR101','ASTR101L'}),AboveNumReq('COMP',5,0.0,420,3.0,[])])
 
-
+j = open("venv/requirements/requirementsJSONs/ComputerScienceBS.json",'w')
+j.write(json.dumps(nick,default=reqList_encoder,indent=2))
+j.close()
