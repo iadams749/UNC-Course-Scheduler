@@ -13,3 +13,7 @@ def req_encoder(req):
         return {'type': 'NUM', 'number': req.num, 'classes': list(req.classes)}
 
     raise TypeError(f'Object {req} is not a valid req type')
+
+# TODO: Add serialization for AboveNumReq class
+
+# TODO: Add deserialzation for all req classes
