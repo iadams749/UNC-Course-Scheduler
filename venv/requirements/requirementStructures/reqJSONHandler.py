@@ -17,7 +17,16 @@ def req_encoder(req):
 
     raise TypeError(f'Object {req} is not a valid req type')
 
-# TODO: Add serialization for ClassList class
+def reqList_encoder(reqs):
+    if isinstance(reqs, ReqList):
+        dictList = []
+
+        for r in reqs.requirementList:
+            dictList.append(json.dumps(r,default=req_encoder))
+
+        return dictList
+
+    raise TypeError(f'Object {reqs} is not a valid reqList')
 
 # TODO: Add deserialization for all req classes
 

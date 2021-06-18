@@ -23,7 +23,6 @@ classesTaken.add(jay)
 classesTaken.add(thomas)
 
 reqClasses = {'ASTR101','MATH347','RELI109'}
-nick = AboveNumReq('COMP',5,0.0,420,3.0,['COMP455','COMP550','COMP496','COMP690','COMP692H'])
+nick = ReqList(['COMP210','COMP211',OrReq({'COMP283','MATH381'}),AndReq({'ASTR101','ASTR101L'}),AboveNumReq('COMP',5,0.0,420,3.0,[])])
 
-print(json.dumps(nick, default=req_encoder, indent=4))
 

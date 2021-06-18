@@ -88,3 +88,5 @@ class ReqList:
     def printReqs(self):
         for r in self.requirementList:
             print(r.classes)
+
+# TODO: Add in an MultiOrReq class that supports other reqs, not just classes
