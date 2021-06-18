@@ -12,8 +12,13 @@ def req_encoder(req):
     elif isinstance(req, NumReq):
         return {'type': 'NUM', 'number': req.num, 'classes': list(req.classes)}
 
+    elif isinstance(req, AboveNumReq):
+        return {'type': 'ABOVENUM', 'num': req.num, 'creds': req.creds, 'minNum': req.minNum, 'minCreds': req.minCreds, 'exclusions': req.exclusions }
+
     raise TypeError(f'Object {req} is not a valid req type')
 
-# TODO: Add serialization for AboveNumReq class
+# TODO: Add serialization for ClassList class
 
-# TODO: Add deserialzation for all req classes
+# TODO: Add deserialization for all req classes
+
+# TODO: Add deserialization for ClassList class
