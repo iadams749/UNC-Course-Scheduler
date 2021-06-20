@@ -1,6 +1,16 @@
 This file will store the commands used to generate the JSON files for the degree requirements,
 just so They do not need to be re typed out every time but rather can be copied and pasted
 
+Business Administration Minor:
+
+nick = ReqList(['BUSI102', 'ECON101', 'ENGL105', OrReq({'MATH152', 'MATH231', 'MATH232', 'STOR113'}), 'STOR155',\
+                'BUSI403', 'BUSI406', 'BUSI408', 'BUSI411', AboveNumReq('BUSI', 0, 4.5, 0, 0.0, ['BUSI102', 'BUSI403', 'BUSI406', 'BUSI408', 'BUSI411'])])
+
+j = open("venv/requirements/requirementsJSONs/BusinessAdministrationMinor.json",'w')
+j.write(json.dumps(nick,default=reqList_encoder,indent=2))
+j.close()
+
+
 Computer Science Major, B.S.:
 
 nick = ReqList(['COMP210','COMP211', 'COMP301', 'COMP311', OrReq({'COMP283','MATH381'}), 'COMP455', 'COMP550', \

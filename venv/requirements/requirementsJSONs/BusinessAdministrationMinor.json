@@ -1,0 +1,74 @@
+[
+  "CLASSLIST",
+  {
+    "type": "AND",
+    "classes": [
+      "BUSI102"
+    ]
+  },
+  {
+    "type": "AND",
+    "classes": [
+      "ECON101"
+    ]
+  },
+  {
+    "type": "AND",
+    "classes": [
+      "ENGL105"
+    ]
+  },
+  {
+    "type": "OR",
+    "classes": [
+      "MATH232",
+      "STOR113",
+      "MATH231",
+      "MATH152"
+    ]
+  },
+  {
+    "type": "AND",
+    "classes": [
+      "STOR155"
+    ]
+  },
+  {
+    "type": "AND",
+    "classes": [
+      "BUSI403"
+    ]
+  },
+  {
+    "type": "AND",
+    "classes": [
+      "BUSI406"
+    ]
+  },
+  {
+    "type": "AND",
+    "classes": [
+      "BUSI408"
+    ]
+  },
+  {
+    "type": "AND",
+    "classes": [
+      "BUSI411"
+    ]
+  },
+  {
+    "type": "ABOVENUM",
+    "num": 0,
+    "creds": 4.5,
+    "minNum": 0,
+    "minCreds": 0.0,
+    "exclusions": [
+      "BUSI102",
+      "BUSI403",
+      "BUSI406",
+      "BUSI408",
+      "BUSI411"
+    ]
+  }
+]
