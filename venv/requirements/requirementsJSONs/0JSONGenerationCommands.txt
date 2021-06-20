@@ -1,0 +1,23 @@
+This file will store the commands used to generate the JSON files for the degree requirements,
+just so They do not need to be re typed out every time but rather can be copied and pasted
+
+Business Administration Minor:
+
+nick = ReqList(['BUSI102', 'ECON101', 'ENGL105', OrReq({'MATH152', 'MATH231', 'MATH232', 'STOR113'}), 'STOR155',\
+                'BUSI403', 'BUSI406', 'BUSI408', 'BUSI411', AboveNumReq('BUSI', 0, 4.5, 0, 0.0, ['BUSI102', 'BUSI403', 'BUSI406', 'BUSI408', 'BUSI411'])])
+
+j = open("venv/requirements/requirementsJSONs/BusinessAdministrationMinor.json",'w')
+j.write(json.dumps(nick,default=reqList_encoder,indent=2))
+j.close()
+
+
+Computer Science Major, B.S.:
+
+nick = ReqList(['COMP210','COMP211', 'COMP301', 'COMP311', OrReq({'COMP283','MATH381'}), 'COMP455', 'COMP550', \
+                AboveNumReq('COMP',5,0.0,420,3.0,['COMP455','COMP550','COMP496','COMP690','COMP692H']),\
+                'MATH231', 'MATH232', 'MATH233', OrReq({'MATH347', 'MATH577'}), 'STOR435',\
+                MultiOrReq(2,[AndReq({'ASTR101', 'ASTR101L'}), AndReq({'BIOL101', 'BIOL101L'}), 'BIOL202', 'BIOL205', AndReq({'CHEM101', 'CHEM101L'}), AndReq({'CHEM102', 'CHEM102L'}), AndReq({'GEOL101', 'GEOL101L'}), 'PHYS115', 'PHYS116', 'PHYS117', 'PHYS118', 'PHYS119', 'PHYS351', 'PHYS352'])])
+
+j = open("venv/requirements/requirementsJSONs/ComputerScienceBS.json",'w')
+j.write(json.dumps(nick,default=reqList_encoder,indent=2))
+j.close()
