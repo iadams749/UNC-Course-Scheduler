@@ -1,0 +1,186 @@
+[
+  "CLASSLIST",
+  {
+    "type": "AND",
+    "classes": [
+      "COMP210"
+    ]
+  },
+  {
+    "type": "AND",
+    "classes": [
+      "COMP211"
+    ]
+  },
+  {
+    "type": "AND",
+    "classes": [
+      "COMP301"
+    ]
+  },
+  {
+    "type": "AND",
+    "classes": [
+      "COMP311"
+    ]
+  },
+  {
+    "type": "OR",
+    "classes": [
+      "COMP283",
+      "MATH381"
+    ]
+  },
+  {
+    "type": "AND",
+    "classes": [
+      "COMP455"
+    ]
+  },
+  {
+    "type": "AND",
+    "classes": [
+      "COMP550"
+    ]
+  },
+  {
+    "type": "ABOVENUM",
+    "num": 5,
+    "creds": 0.0,
+    "minNum": 420,
+    "minCreds": 3.0,
+    "exclusions": [
+      "COMP455",
+      "COMP550",
+      "COMP496",
+      "COMP690",
+      "COMP692H"
+    ]
+  },
+  {
+    "type": "AND",
+    "classes": [
+      "MATH231"
+    ]
+  },
+  {
+    "type": "AND",
+    "classes": [
+      "MATH232"
+    ]
+  },
+  {
+    "type": "AND",
+    "classes": [
+      "MATH233"
+    ]
+  },
+  {
+    "type": "OR",
+    "classes": [
+      "MATH347",
+      "MATH577"
+    ]
+  },
+  {
+    "type": "AND",
+    "classes": [
+      "STOR435"
+    ]
+  },
+  {
+    "type": "MULTIOR",
+    "num": 2,
+    "reqs": [
+      {
+        "type": "AND",
+        "classes": [
+          "ASTR101L",
+          "ASTR101"
+        ]
+      },
+      {
+        "type": "AND",
+        "classes": [
+          "BIOL101",
+          "BIOL101L"
+        ]
+      },
+      {
+        "type": "AND",
+        "classes": [
+          "BIOL202"
+        ]
+      },
+      {
+        "type": "AND",
+        "classes": [
+          "BIOL205"
+        ]
+      },
+      {
+        "type": "AND",
+        "classes": [
+          "CHEM101L",
+          "CHEM101"
+        ]
+      },
+      {
+        "type": "AND",
+        "classes": [
+          "CHEM102L",
+          "CHEM102"
+        ]
+      },
+      {
+        "type": "AND",
+        "classes": [
+          "GEOL101L",
+          "GEOL101"
+        ]
+      },
+      {
+        "type": "AND",
+        "classes": [
+          "PHYS115"
+        ]
+      },
+      {
+        "type": "AND",
+        "classes": [
+          "PHYS116"
+        ]
+      },
+      {
+        "type": "AND",
+        "classes": [
+          "PHYS117"
+        ]
+      },
+      {
+        "type": "AND",
+        "classes": [
+          "PHYS118"
+        ]
+      },
+      {
+        "type": "AND",
+        "classes": [
+          "PHYS119"
+        ]
+      },
+      {
+        "type": "AND",
+        "classes": [
+          "PHYS351"
+        ]
+      },
+      {
+        "type": "AND",
+        "classes": [
+          "PHYS352"
+        ]
+      }
+    ]
+  }
+]

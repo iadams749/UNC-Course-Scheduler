@@ -1,30 +1,7 @@
-from classObj import *
-from reqStructs import *
-import json
-from reqJSONHandler import *
+This file will store the commands used to generate the JSON files for the degree requirements,
+just so They do not need to be re typed out every time but rather can be copied and pasted
 
-classesTaken = set()
-
-joey = ClassObj()
-joey.setSubAbb('ASTR')
-joey.setNumber('101')
-
-jay = ClassObj()
-jay.setSubAbb('COMP')
-jay.setNumber('210')
-jay.setCredits(3.0,3.0)
-
-thomas = ClassObj()
-thomas.setSubAbb('MATH')
-thomas.setNumber('347')
-
-classesTaken.add(joey)
-classesTaken.add(jay)
-classesTaken.add(thomas)
-
-# nick = MultiOrReq(2,['ASTR101', 'COMP211', OrReq({'MATH347','COMP283'})])
-# print(json.dumps(nick, default=reqList_encoder, indent=4))
-# reqClasses = {'ASTR101','MATH347','RELI109'}
+Computer Science Major, B.S.:
 
 nick = ReqList(['COMP210','COMP211', 'COMP301', 'COMP311', OrReq({'COMP283','MATH381'}), 'COMP455', 'COMP550', \
                 AboveNumReq('COMP',5,0.0,420,3.0,['COMP455','COMP550','COMP496','COMP690','COMP692H']),\

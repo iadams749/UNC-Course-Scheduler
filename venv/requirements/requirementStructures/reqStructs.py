@@ -59,6 +59,7 @@ class AboveNumReq:
         self.minNum = minNum
         self.minCreds = minCreds
         self.exclusions = exclusions
+
     def isSatisfied(self, classList):
 
         counter = 0
@@ -71,6 +72,29 @@ class AboveNumReq:
                 credits = credits + c.minCredits
 
         if (counter >= self.num) and (credits >= self.creds):
+            return True
+        else:
+            return False
+
+class MultiOrReq:
+    def __init__(self, num, reqs):
+        self.requirementList = []
+        self.num = num
+        for r in reqs:
+            if isinstance(r, str):
+                self.requirementList.append(AndReq({r}))
+            else:
+                self.requirementList.append(r)
+
+    def isSatisfied(self, classList):
+
+        counter = 0
+
+        for r in self.requirementList:
+            if r.isSatisfied(classList):
+                counter = counter + 1
+
+        if counter >= self.num:
             return True
         else:
             return False

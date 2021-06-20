@@ -15,9 +15,21 @@ def req_encoder(req):
     elif isinstance(req, AboveNumReq):
         return {'type': 'ABOVENUM', 'num': req.num, 'creds': req.creds, 'minNum': req.minNum, 'minCreds': req.minCreds, 'exclusions': req.exclusions }
 
+    elif isinstance(req, MultiOrReq):
+        return json.loads(json.dumps(req, default=reqList_encoder))
+
     raise TypeError(f'Object {req} is not a valid req type')
 
 def reqList_encoder(reqs):
+
+    if isinstance(reqs, MultiOrReq):
+        dictList = []
+
+        for r in reqs.requirementList:
+            dictList.append(json.loads(json.dumps(r,default=req_encoder)))
+
+        return {'type': 'MULTIOR', 'num': reqs.num, 'reqs' : dictList}
+
     if isinstance(reqs, ReqList):
         dictList = ['CLASSLIST']
 
