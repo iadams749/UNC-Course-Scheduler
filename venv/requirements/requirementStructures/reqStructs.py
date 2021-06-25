@@ -13,6 +13,9 @@ class OrReq:
 
         return False
 
+    def __repr__(self):
+        return f'<Req: Type = {type(self)}, Classes = {self.classes}>'
+
 #Requirements for a list of classes where all are needed
 class AndReq:
     def __init__(self, classSet):
@@ -30,6 +33,9 @@ class AndReq:
                 return False
 
         return True
+
+    def __repr__(self):
+        return f'<Req: Type = {type(self)}, Classes = {self.classes}>'
 
 #Requrements for a certain number of classes from a list
 class NumReq:
@@ -49,6 +55,9 @@ class NumReq:
             return True
         else:
             return False
+
+    def __repr__(self):
+        return f'<Req: Type = {type(self)}, Classes = {self.classes}, Num = {self.num}>'
 
 #Requirements for things like "Five or more COMP classes numbered above 420 and three or more credit hours
 class AboveNumReq:
@@ -75,6 +84,9 @@ class AboveNumReq:
             return True
         else:
             return False
+
+    def __repr__(self):
+        return f'<Req: Type = {type(self)}, Subject = {self.subject}, Num = {self.num}, Creds = {self.creds}, MinNum = {self.minNum}, MinCreds = {self.minCreds}, Exclusions = {self.exclusions}>'
 
 class MultiOrReq:
     def __init__(self, num, reqs):

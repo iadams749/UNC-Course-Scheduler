@@ -13,13 +13,14 @@ def req_encoder(req):
         return {'type': 'NUM', 'number': req.num, 'classes': list(req.classes)}
 
     elif isinstance(req, AboveNumReq):
-        return {'type': 'ABOVENUM', 'num': req.num, 'creds': req.creds, 'minNum': req.minNum, 'minCreds': req.minCreds, 'exclusions': req.exclusions }
+        return {'type': 'ABOVENUM', 'subject': req.subject, 'num': req.num, 'creds': req.creds, 'minNum': req.minNum, 'minCreds': req.minCreds, 'exclusions': req.exclusions }
 
     elif isinstance(req, MultiOrReq):
         return json.loads(json.dumps(req, default=reqList_encoder))
 
     raise TypeError(f'Object {req} is not a valid req type')
 
+#Encodes a ReqList as well as a MultiOrReq
 def reqList_encoder(reqs):
 
     if isinstance(reqs, MultiOrReq):
@@ -31,7 +32,7 @@ def reqList_encoder(reqs):
         return {'type': 'MULTIOR', 'num': reqs.num, 'reqs' : dictList}
 
     if isinstance(reqs, ReqList):
-        dictList = ['CLASSLIST']
+        dictList = []
 
         for r in reqs.requirementList:
             dictList.append(json.loads(json.dumps(r,default=req_encoder)))
@@ -40,6 +41,31 @@ def reqList_encoder(reqs):
 
     raise TypeError(f'Object {reqs} is not a valid reqList')
 
-# TODO: Add deserialization for all req classes
+#Deserializes the reqs from their JSON format
+def req_decoder(req):
+
+    json_str = json.loads(req)
+
+    if json_str['type'] == 'AND':
+        classSet = set(json_str['classes'])
+        return AndReq(classSet)
+
+    if json_str['type'] == 'OR':
+        classSet = set(json_str['classes'])
+        return OrReq(classSet)
+
+    if json_str['type'] == 'NUM':
+        classSet = set(json_str['classes'])
+        num = json_str['number']
+        return NumReq(classSet, num)
+
+    if json_str['type'] == 'ABOVENUM':
+        subject = json_str['subject']
+        num = json_str['num']
+        creds = json_str['creds']
+        minNum = json_str['minNum']
+        minCreds = json_str['minCreds']
+        exclusions = json_str['exclusions']
+        return AboveNumReq(subject, num, creds, minNum, minCreds, exclusions)
 
 # TODO: Add deserialization for ClassList class

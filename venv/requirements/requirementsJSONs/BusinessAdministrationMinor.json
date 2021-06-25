@@ -1,5 +1,4 @@
 [
-  "CLASSLIST",
   {
     "type": "AND",
     "classes": [
@@ -21,10 +20,10 @@
   {
     "type": "OR",
     "classes": [
-      "MATH232",
+      "MATH152",
       "STOR113",
       "MATH231",
-      "MATH152"
+      "MATH232"
     ]
   },
   {
@@ -59,6 +58,7 @@
   },
   {
     "type": "ABOVENUM",
+    "subject": "BUSI",
     "num": 0,
     "creds": 4.5,
     "minNum": 0,

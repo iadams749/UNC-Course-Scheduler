@@ -1,5 +1,4 @@
 [
-  "CLASSLIST",
   {
     "type": "AND",
     "classes": [
@@ -45,6 +44,7 @@
   },
   {
     "type": "ABOVENUM",
+    "subject": "COMP",
     "num": 5,
     "creds": 0.0,
     "minNum": 420,
@@ -78,8 +78,8 @@
   {
     "type": "OR",
     "classes": [
-      "MATH347",
-      "MATH577"
+      "MATH577",
+      "MATH347"
     ]
   },
   {
@@ -95,15 +95,15 @@
       {
         "type": "AND",
         "classes": [
-          "ASTR101L",
-          "ASTR101"
+          "ASTR101",
+          "ASTR101L"
         ]
       },
       {
         "type": "AND",
         "classes": [
-          "BIOL101",
-          "BIOL101L"
+          "BIOL101L",
+          "BIOL101"
         ]
       },
       {
@@ -135,8 +135,8 @@
       {
         "type": "AND",
         "classes": [
-          "GEOL101L",
-          "GEOL101"
+          "GEOL101",
+          "GEOL101L"
         ]
       },
       {
