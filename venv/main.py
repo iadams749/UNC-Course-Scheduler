@@ -28,15 +28,16 @@ classesTaken.add(thomas)
 
 # nick = AboveNumReq('COMP',5,0.0,420,3.0,['COMP455','COMP550','COMP496','COMP690','COMP692H'])
 # json_string = json.dumps(nick, default=req_encoder)
+# json_loaded = json.loads(json_string)
+# print(type(json_loaded))
 # ben = req_decoder(json_string)
 # print(ben)
 
-reqs = ReqList(['BUSI102', 'ECON101', 'ENGL105', OrReq({'MATH152', 'MATH231', 'MATH232', 'STOR113'}), 'STOR155',\
-                'BUSI403', 'BUSI406', 'BUSI408', 'BUSI411', AboveNumReq('BUSI', 0, 4.5, 0, 0.0, ['BUSI102', 'BUSI403', 'BUSI406', 'BUSI408', 'BUSI411'])])
+# nick = MultiOrReq(2,[AndReq({'ASTR101', 'ASTR101L'}), AndReq({'BIOL101', 'BIOL101L'}), 'BIOL202', 'BIOL205', AndReq({'CHEM101', 'CHEM101L'}), AndReq({'CHEM102', 'CHEM102L'}), AndReq({'GEOL101', 'GEOL101L'}), 'PHYS115', 'PHYS116', 'PHYS117', 'PHYS118', 'PHYS119', 'PHYS351', 'PHYS352'])
+# item = json.dumps(nick, default=reqList_encoder)
+# print(req_decoder(item))
 
-j = open("venv/requirements/requirementsJSONs/BusinessAdministrationMinor.json",'w')
-j.write(json.dumps(reqs,default=reqList_encoder,indent=2))
-j.close()
-
-
+f = open('venv/requirements/requirementsJSONs/ComputerScienceBS.json')
+nick = json.load(f)
+print(req_decoder(nick))
 

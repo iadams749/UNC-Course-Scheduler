@@ -111,6 +111,10 @@ class MultiOrReq:
         else:
             return False
 
+    def __repr__(self):
+        return f'<Req: Type = {type(self)}, Num = {self.num}, Reqs = {self.requirementList}>'
+
+
 #Upper-level container for lower-level requirements
 class ReqList:
     def __init__(self,reqs):
@@ -125,4 +129,5 @@ class ReqList:
         for r in self.requirementList:
             print(r.classes)
 
-# TODO: Add in an MultiOrReq class that supports other reqs, not just classes
+    def __repr__(self):
+        return  f'<Req: Type = {type(self)}, Reqs = {self.requirementList}>'

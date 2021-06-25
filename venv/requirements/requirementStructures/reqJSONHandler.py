@@ -42,24 +42,31 @@ def reqList_encoder(reqs):
     raise TypeError(f'Object {reqs} is not a valid reqList')
 
 #Deserializes the reqs from their JSON format
-def req_decoder(req):
+def req_decoder(json_str):
 
-    json_str = json.loads(req)
+    # json_str = json.loads(req)
 
-    if json_str['type'] == 'AND':
+    if isinstance(json_str, list):
+        reqs = []
+        for r in json_str:
+            reqs.append(req_decoder(r))
+
+        return ReqList(reqs)
+
+    elif json_str['type'] == 'AND':
         classSet = set(json_str['classes'])
         return AndReq(classSet)
 
-    if json_str['type'] == 'OR':
+    elif json_str['type'] == 'OR':
         classSet = set(json_str['classes'])
         return OrReq(classSet)
 
-    if json_str['type'] == 'NUM':
+    elif json_str['type'] == 'NUM':
         classSet = set(json_str['classes'])
         num = json_str['number']
         return NumReq(classSet, num)
 
-    if json_str['type'] == 'ABOVENUM':
+    elif json_str['type'] == 'ABOVENUM':
         subject = json_str['subject']
         num = json_str['num']
         creds = json_str['creds']
@@ -68,4 +75,10 @@ def req_decoder(req):
         exclusions = json_str['exclusions']
         return AboveNumReq(subject, num, creds, minNum, minCreds, exclusions)
 
-# TODO: Add deserialization for ClassList class
+    elif json_str['type'] == 'MULTIOR':
+        num = json_str['num']
+        reqs = []
+        for r in json_str['reqs']:
+            reqs.append(req_decoder(r))
+
+        return MultiOrReq(num, reqs)
